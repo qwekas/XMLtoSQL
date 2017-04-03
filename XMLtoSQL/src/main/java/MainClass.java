@@ -16,6 +16,16 @@ public class MainClass {
 
         xml.openXML();
 
+        String dbUser = "d54572_xmldata";
+        String dbPass = "Xmldata1";
+        String dbName = "d54572_xmldata";
+        String dbHost = "d54572.mysql.zonevs.eu";
+        String dbPort = "3306";
+        String dbType = "mysql";
+
+        SQLWriter sql = new SQLWriter(dbUser, dbPass, dbName, dbHost, dbPort, dbType);
+        sql.connectToDB();
+
         List<String> columns=xml.getColumns();
         System.out.println("Etteantud .xml failis on tulbad: ");
         for (int i = 0; i < columns.size(); i++) {
